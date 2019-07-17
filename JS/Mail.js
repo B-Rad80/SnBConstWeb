@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer');
 const pass = 'BboyNoReply210'
-var ex = function mailinfo(from, email,subject, message){
+var ex = function mailinfo(from, email, message){
     this.from = from
     this.message = message
 
@@ -14,11 +14,11 @@ var ex = function mailinfo(from, email,subject, message){
 
     var mailOptions = {
       from: 'BrandonRNoReply@gmail.com',
-      to: 'Roemer.Brandon429@gmail.com',
-      subject: subject,
-      text: from+ email + message
+      to: 'scott.butry@gmail.com',
+      subject: from + " "+email ,
+      text: message
     };
-
+    console.log(message)
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         console.log(error);

@@ -43,18 +43,19 @@ app.get('/contact', (req, res) => {
     });
 })
 
+
 //SEND INFO PAGE WITH RESPONSE?????
 //CONTACT ME POPUP
-app.post('/', (req, res) => {
+app.post('/contact', (req, res) => {
 
   const { error } = validateEmail(req.body);
   if(error){
     res.status(400).send(error.details[0].message);
     return;
   }
-  console.log(req.body.name)
-  fmail.Mailer(req.body.name,req.body.email,req.body.subject, req.body.message);
-  res.sendFile(base_path +'home.html', {
+  console.log(req.body.message)
+  fmail.Mailer(req.body.name,req.body.email, req.body.message);
+  res.sendFile(base_path +'contact.html', {
       root: path.join(__dirname, './')
   });
 
@@ -64,8 +65,7 @@ app.post('/', (req, res) => {
 function validateEmail(item){
   const schema = {
     email: Joi.string().email().required(),
-    message: Joi.string().min(3).required(),
-    subject: Joi.string().max(255),
+    message: Joi.string().min(1).required(),
     name: Joi.string().max(2000).required()
   };
 
