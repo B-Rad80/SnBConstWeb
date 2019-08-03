@@ -1,0 +1,32 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "SnB Website ",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Rad80/SnBConstWeb.git"
+  },
+  "keywords": [
+    "Not",
+    "Important",
+    "Right",
+    "Now"
+  ],
+  "author": "Brandon Roemer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B-Rad80/SnBConstWeb/issues"
+  },
+  "homepage": "https://github.com/B-Rad80/SnBConstWeb#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.0",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7"
+  }
+}

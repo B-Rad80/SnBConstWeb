@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c9d31bc2-f6cf-417f-b6fa-d654ef9a2c26}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>app.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="README.md" />
+    <Content Include="app.js" />
+    <Content Include="industrie\about.html" />
+    <Content Include="industrie\contact.html" />
+    <Content Include="industrie\index.html" />
+    <Content Include="industrie\news.html" />
+    <Content Include="industrie\services.html" />
+    <Content Include="JS\Mail.js" />
+    <Content Include="industrie\css\aos.css" />
+    <Content Include="industrie\css\bootstrap-datepicker.css" />
+    <Content Include="industrie\css\bootstrap.min.css" />
+    <Content Include="industrie\css\jquery-ui.css" />
+    <Content Include="industrie\css\magnific-popup.css" />
+    <Content Include="industrie\css\owl.carousel.min.css" />
+    <Content Include="industrie\css\owl.theme.default.min.css" />
+    <Content Include="industrie\css\style.css" />
+    <Content Include="industrie\images\bathroom1.jpg" />
+    <Content Include="industrie\images\bathroom2.jpg" />
+    <Content Include="industrie\images\bathroom3.jpg" />
+    <Content Include="industrie\images\hero_bg_1.jpg" />
+    <Content Include="industrie\images\hero_bg_1_gradient.jpg" />
+    <Content Include="industrie\images\hero_bg_2.jpg" />
+    <Content Include="industrie\images\img_1.jpg" />
+    <Content Include="industrie\images\img_1_colored.jpg" />
+    <Content Include="industrie\images\img_2.jpg" />
+    <Content Include="industrie\images\img_2_colored.jpg" />
+    <Content Include="industrie\images\img_3.jpg" />
+    <Content Include="industrie\images\img_3_colored.jpg" />
+    <Content Include="industrie\images\img_4.jpg" />
+    <Content Include="industrie\images\img_4_colored.jpg" />
+    <Content Include="industrie\images\kitchen1.jpg" />
+    <Content Include="industrie\images\kitchen2.jpg" />
+    <Content Include="industrie\images\kitchen3.jpg" />
+    <Content Include="industrie\images\person_1.jpg" />
+    <Content Include="industrie\images\person_2.jpg" />
+    <Content Include="industrie\images\person_3.jpg" />
+    <Content Include="industrie\images\person_4.jpg" />
+    <Content Include="industrie\js\aos.js" />
+    <Content Include="industrie\js\bootstrap-datepicker.min.js" />
+    <Content Include="industrie\js\bootstrap.min.js" />
+    <Content Include="industrie\js\jquery-3.3.1.min.js" />
+    <Content Include="industrie\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="industrie\js\jquery-ui.js" />
+    <Content Include="industrie\js\jquery.countdown.min.js" />
+    <Content Include="industrie\js\jquery.magnific-popup.min.js" />
+    <Content Include="industrie\js\jquery.stellar.min.js" />
+    <Content Include="industrie\js\main.js" />
+    <Content Include="industrie\js\owl.carousel.min.js" />
+    <Content Include="industrie\js\popper.min.js" />
+    <Content Include="industrie\js\slick.min.js" />
+    <Content Include="industrie\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="industrie\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="industrie\css\bootstrap\bootstrap.css" />
+    <Content Include="industrie\fonts\icomoon\demo.html" />
+    <Content Include="industrie\fonts\icomoon\style.css" />
+    <Content Include="industrie\fonts\icomoon\selection.json" />
+    <Content Include="industrie\fonts\flaticon\font\flaticon.html" />
+    <Content Include="industrie\fonts\flaticon\font\flaticon.css" />
+    <Content Include="industrie\fonts\flaticon\font\_flaticon.css" />
+    <Content Include="industrie\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="industrie\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="industrie\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="industrie\fonts\icomoon\fonts\icomoon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="industrie" />
+    <Folder Include="industrie\css" />
+    <Folder Include="industrie\css\bootstrap" />
+    <Folder Include="industrie\fonts" />
+    <Folder Include="industrie\fonts\flaticon" />
+    <Folder Include="industrie\fonts\flaticon\font" />
+    <Folder Include="industrie\fonts\flaticon\license" />
+    <Folder Include="industrie\fonts\icomoon" />
+    <Folder Include="industrie\fonts\icomoon\demo-files" />
+    <Folder Include="industrie\fonts\icomoon\fonts" />
+    <Folder Include="industrie\images" />
+    <Folder Include="industrie\js" />
+    <Folder Include="industrie\scss" />
+    <Folder Include="industrie\scss\bootstrap" />
+    <Folder Include="industrie\scss\bootstrap\mixins" />
+    <Folder Include="industrie\scss\bootstrap\utilities" />
+    <Folder Include="JS" />
+    <Folder Include="SnB Website" />
+    <Folder Include="SnB Website\SnB Website" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

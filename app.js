@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
-const Joi = require("@hapi/joi");
+const Joi = require("@hapi/hapi");
 const path = require('path');
 const fmail = require('./JS/Mail.js');
+
+const app = express();
 
 console.log(fmail.Mailer);
 
