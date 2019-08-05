@@ -1,77 +1,87 @@
 const express = require('express');
-const Joi = require("@hapi/hapi");
+const Joi = require("@hapi/joi");
 const path = require('path');
 const fmail = require('./JS/Mail.js');
-
+const jsrender = require('jsrender');
 const app = express();
 
-console.log(fmail.Mailer);
+//console.log(fmail.Mailer);
 
+app.engine('html', jsrender.__express); // Set JsRender as template engine for .html files
+app.set('view engine', 'html');
 
 base_path = '/industrie/'
+app.set('views', __dirname + base_path); // Folder location for JsRender templates for Express
+
 app.use(express.urlencoded({ extended: true })); //html forms
-//app.use(express.json());       //api calls
 app.use(express.static('industrie'));
 //HOME PAGE
 
 //////////////////ROUTING 'N STUFF///////////////////
 app.get('/', (req, res) => {
-  res.sendFile(base_path + 'services.html', {
-      root: path.join(__dirname, './')
-  })
+    res.render('services.html', { name: "Jim" });
 });
 
 //About
 app.get('/about', (req, res) => {
-    res.sendFile(base_path +'about.html', {
-        root: path.join(__dirname, './')
-    });
-})
-//news
+    res.render('about.html', { name: "Jim" });
+});
+
+//News
 app.get('/news', (req, res) => {
-    res.sendFile(base_path +'news.html', {
-        root: path.join(__dirname, './')
-    });
-})
-app.get('/services', (req, res) => {
-    res.sendFile(base_path +'services.html', {
-        root: path.join(__dirname, './')
-    });
-})
+    res.render('news.html', { name: "Jim" });
+});
+
+//Contact
+ var issue = { name: "", email: "", message: "" };
 app.get('/contact', (req, res) => {
-    res.sendFile(base_path +'contact.html', {
-        root: path.join(__dirname, './')
-    });
-})
+    res.render('contact.html', { status: "100", Error: "",issue});
+});
 
 
 //SEND INFO PAGE WITH RESPONSE?????
 //CONTACT ME POPUP
 app.post('/contact', (req, res) => {
 
-  const { error } = validateEmail(req.body);
-  if(error){
-    res.status(400).send(error.details[0].message);
+    const { error } = validateEmail(req.body);
+    if (error) {
+      console.log(error.details[0].message)
+      res.status(400)
+      issue = { name: "", email: "", message: "" };
+
+      if (error.details[0].path[0] == 'name' ){
+          issue["name"] = "True";
+      }
+      else if (error.details[0].message.indexOf("email") > 0) {
+            issue["email"] = "True";
+      }
+      else if (error.details[0].message.indexOf("message") > 0) {
+          issue["message"] = "True";
+      }
+
+      res.render('contact.html', { status: "400", Error: error.details[0].message, issue});
+
+
     return;
   }
-  console.log(req.body.message)
-  fmail.Mailer(req.body.name,req.body.email, req.body.message);
-  res.sendFile(base_path +'contact.html', {
-      root: path.join(__dirname, './')
+  //fmail.Mailer(req.body.name,req.body.email, req.body.message);
+    issue = { name: "", email: "", message: "" };
+    res.render('contact.html', {status: "99", Error: "",issue });
   });
 
-});
+
 //////////////////VALIDATION///////////////////
 //EMAIL
 function validateEmail(item){
-  const schema = {
+    const schema = {
+    name: Joi.string().max(50).min(1).required(),
     email: Joi.string().email().required(),
     message: Joi.string().min(1).required(),
-    name: Joi.string().max(2000).required()
   };
 
   return Joi.validate(item, schema);
 }
+
 ////////////////////PORT STUFF///////////////////
 //env variable set outside application ex PORT
 const port = process.env.PORT || 8080;

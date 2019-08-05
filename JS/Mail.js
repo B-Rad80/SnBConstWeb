@@ -1,5 +1,4 @@
 var nodemailer = require('nodemailer');
-const pass = 'BboyNoReply210'
 var ex = function mailinfo(from, email, message){
     this.from = from
     this.message = message
